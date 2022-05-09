@@ -2,7 +2,7 @@ version: '3.5'
 
 services:
   keycloak:
-    image: jboss/keycloak
+    image: jboss/keycloak:16.1.1
     container_name: uwithme-keycloak
     volumes:
       - ./keycloak-config:/opt/jboss/keycloak/imports
@@ -15,7 +15,7 @@ services:
       - "8080:8080"
 
   db:
-    image: postgres
+    image: postgres:14.2-bullseye
     container_name: uwithme-postgres
     restart: always
     volumes:
