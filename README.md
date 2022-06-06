@@ -15,6 +15,6 @@ Starting docker containers in command line:
 1. Open command line in "uwithme-docker-files" project foulder.
 2. Run command: 
 ```bash
-docker-compose -f ".\docker-compose.yml" up -d
+docker-compose up -d
 ```
 
