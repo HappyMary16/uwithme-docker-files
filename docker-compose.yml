@@ -2,12 +2,8 @@ version: '3.5'
 
 services:
   keycloak:
-    image: jboss/keycloak:16.1.1
+    build: ./keycloak/.
     container_name: uwithme-keycloak
-    volumes:
-      - ./keycloak-config:/opt/jboss/keycloak/imports
-    command:
-      - "-b 0.0.0.0 -Dkeycloak.import=/opt/jboss/keycloak/imports/realm-export.json -Dkeycloak.profile.feature.upload_scripts=enabled"
     environment:
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
