@@ -947,12 +947,14 @@
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "secret": "894d1c96-8785-4e76-9211-5ef1f483674f",
-      "redirectUris": [],
+      "redirectUris": [
+        "*"
+      ],
       "webOrigins": [],
       "notBefore": 0,
       "bearerOnly": false,
       "consentRequired": false,
-      "standardFlowEnabled": false,
+      "standardFlowEnabled": true,
       "implicitFlowEnabled": false,
       "directAccessGrantsEnabled": false,
       "serviceAccountsEnabled": true,
@@ -996,6 +998,7 @@
           "consentRequired": false,
           "config": {
             "user.session.note": "clientAddress",
+            "userinfo.token.claim": "true",
             "id.token.claim": "true",
             "access.token.claim": "true",
             "claim.name": "clientAddress",
@@ -1010,6 +1013,7 @@
           "consentRequired": false,
           "config": {
             "user.session.note": "clientId",
+            "userinfo.token.claim": "true",
             "id.token.claim": "true",
             "access.token.claim": "true",
             "claim.name": "clientId",
@@ -1024,6 +1028,7 @@
           "consentRequired": false,
           "config": {
             "user.session.note": "clientHost",
+            "userinfo.token.claim": "true",
             "id.token.claim": "true",
             "access.token.claim": "true",
             "claim.name": "clientHost",
@@ -1052,7 +1057,7 @@
             "type": "urn:uwm-bot:resources:default",
             "ownerManagedAccess": false,
             "attributes": {},
-            "_id": "2df03a6e-e73c-4b04-91db-2d2aba3cc6de",
+            "_id": "828f8992-5e5c-4bb8-a9ea-654695bc8090",
             "uris": [
               "/*"
             ]
@@ -1060,7 +1065,7 @@
         ],
         "policies": [
           {
-            "id": "a2299463-dfba-42af-80cf-52ecac6b200d",
+            "id": "b8084a79-f12d-4bc5-b292-a1be6f0d1e80",
             "name": "Default Policy",
             "description": "A policy that grants access only for users within this realm",
             "type": "js",
@@ -1071,7 +1076,7 @@
             }
           },
           {
-            "id": "096d55cd-6440-4b5e-ae5e-0fa0fad38141",
+            "id": "a67f162c-4555-46c2-8359-11058c072ef4",
             "name": "Default Permission",
             "description": "A permission that applies to the default resource type",
             "type": "resource",
