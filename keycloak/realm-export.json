@@ -623,7 +623,6 @@
         }
       ],
       "realmRoles": [
-        "ROLE_TEACHER"
       ]
     },
     {
@@ -637,7 +636,6 @@
         }
       ],
       "realmRoles": [
-        "ROLE_STUDENT"
       ]
     },
     {
