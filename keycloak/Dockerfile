@@ -1,6 +1,6 @@
 FROM jboss/keycloak:16.1.1
 
-COPY start.sh /opt/jboss/tools/start.sh
+COPY --chmod=777 start.sh /opt/jboss/tools/start.sh
 
 ENV KEYCLOAK_USER admin
 ENV KEYCLOAK_PASSWORD admin
