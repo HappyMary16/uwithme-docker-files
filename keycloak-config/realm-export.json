@@ -1,0 +1,220 @@
+{
+  "realm": "KhPI",
+  "enabled": true,
+  "sslRequired": "external",
+  "registrationAllowed": true,
+  "registrationEmailAsUsername": true,
+  "loginWithEmailAllowed": true,
+  "duplicateEmailsAllowed": false,
+  "resetPasswordAllowed": false,
+  "editUsernameAllowed": false,
+  "bruteForceProtected": false,
+  "accessTokenLifespan": 3600,
+  "accessTokenLifespanForImplicitFlow": 3600,
+  "ssoSessionIdleTimeout": 604800,
+  "ssoSessionMaxLifespan": 2592000,
+  "offlineSessionIdleTimeout": 2592000,
+  "offlineSessionMaxLifespan": 5184000,
+  "clientSessionIdleTimeout": 604800,
+  "clientSessionMaxLifespan": 2592000,
+  "requiredCredentials": [
+    "password"
+  ],
+  "roles": {
+    "realm": [
+      {
+        "name": "ROLE_TEACHER",
+        "description": ""
+      },
+      {
+        "name": "ROLE_SERVICE",
+        "description": ""
+      },
+      {
+        "name": "ROLE_ADMIN",
+        "description": ""
+      },
+      {
+        "name": "ROLE_STUDENT",
+        "description": ""
+      }
+    ]
+  },
+  "users": [
+    {
+      "username": "service-account-uwm-bot",
+      "enabled": true,
+      "serviceAccountClientId": "uwm-bot",
+      "realmRoles": [
+        "ROLE_SERVICE"
+      ]
+    },
+    {
+      "username": "service-account-uwm-service",
+      "enabled": true,
+      "serviceAccountClientId": "uwm-service",
+      "realmRoles": [
+        "ROLE_SERVICE"
+      ],
+      "clientRoles": {
+        "realm-management": [
+          "impersonation",
+          "realm-admin",
+          "view-events",
+          "manage-events",
+          "query-clients",
+          "view-users",
+          "manage-authorization",
+          "manage-clients",
+          "view-authorization",
+          "view-clients",
+          "view-realm",
+          "manage-identity-providers",
+          "view-identity-providers",
+          "create-client",
+          "manage-realm",
+          "manage-users",
+          "query-users",
+          "query-realms",
+          "query-groups"
+        ]
+      }
+    },
+    {
+      "username": "service-account-uwm-testsystem-service",
+      "enabled": true,
+      "serviceAccountClientId": "uwm-testsystem-service",
+      "realmRoles": [
+        "ROLE_SERVICE"
+      ],
+      "clientRoles": {
+        "realm-management": [
+          "view-users",
+          "query-users"
+        ]
+      }
+    },
+    {
+      "id": "e47e65d0-b278-4018-9666-1872c238a1cs",
+      "createdTimestamp": 1778716199633,
+      "username": "admin",
+      "email": "admin@mail.com",
+      "firstName": "Admin",
+      "lastName": "Admin",
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "admin"
+        }
+      ],
+      "realmRoles": [
+        "ROLE_ADMIN",
+        "default-roles-khpi"
+      ]
+    }
+  ],
+  "clients": [
+    {
+      "clientId": "uwm-bot",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "cxEUxcYWl8R2tuHVCgqsfLWsi6DGJO4j",
+      "redirectUris": [
+        "*"
+      ],
+      "webOrigins": [
+        "*"
+      ],
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "publicClient": false,
+      "frontchannelLogout": true,
+      "protocol": "openid-connect"
+    },
+    {
+      "clientId": "uwm-service",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "mwBTmK6mTIohwxzXzaf241IXuB9mnz8o",
+      "redirectUris": [],
+      "webOrigins": [],
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "publicClient": false,
+      "frontchannelLogout": true,
+      "protocol": "openid-connect"
+    },
+    {
+      "clientId": "uwm-testsystem-service",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "RHaSmEGaKSr4LARtcqpUgBjFXB4adb4h",
+      "redirectUris": [],
+      "webOrigins": [],
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "publicClient": false,
+      "frontchannelLogout": true,
+      "protocol": "openid-connect"
+    },
+    {
+      "clientId": "uwm-testsystem-ui",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "redirectUris": [
+        "*"
+      ],
+      "webOrigins": [
+        "*"
+      ],
+      "publicClient": true,
+      "frontchannelLogout": true,
+      "protocol": "openid-connect",
+      "protocolMappers": [
+        {
+          "name": "Roles",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-realm-role-mapper",
+          "consentRequired": false,
+          "config": {
+            "id.token.claim": "false",
+            "access.token.claim": "false",
+            "claim.name": "roles",
+            "multivalued": "true",
+            "userinfo.token.claim": "true"
+          }
+        }
+      ]
+    },
+    {
+      "clientId": "uwm-ui",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "redirectUris": [
+        "*"
+      ],
+      "webOrigins": [
+        "*"
+      ],
+      "publicClient": true,
+      "frontchannelLogout": true,
+      "protocol": "openid-connect",
+      "protocolMappers": [
+        {
+          "name": "Roles",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-realm-role-mapper",
+          "consentRequired": false,
+          "config": {
+            "id.token.claim": "false",
+            "access.token.claim": "false",
+            "claim.name": "roles",
+            "multivalued": "true",
+            "userinfo.token.claim": "true"
+          }
+        }
+      ]
+    }
+  ]
+}
