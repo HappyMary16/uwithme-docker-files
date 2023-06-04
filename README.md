@@ -1,6 +1,7 @@
 # University With Me docker files
 
-The project contains configured docker containers for "University With Me" project.
+The project contains configured docker containers for development of "University With Me" project.
+For production use these docker containers: [uwithme-deployment](https://github.com/Misha999777/uwithme-deployment).
 
 You can find additional info about Docker [here](https://www.docker.com/).
 
