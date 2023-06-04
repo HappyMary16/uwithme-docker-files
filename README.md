@@ -5,14 +5,14 @@ The project contains configured docker containers for "University With Me" proje
 You can find additional info about Docker [here](https://www.docker.com/).
 
 ## Containers
-- [Keycloak:16.1.1](https://hub.docker.com/r/jboss/keycloak) has configured realm, clients and user roles.
-- [Postgres:14.2-bullseye](https://hub.docker.com/_/postgres) has created data bases and users for all "University With Me" services.
+- [Keycloak:16.1.1](https://quay.io/repository/keycloak/keycloak?tab=tags&tag=20.0.5) has configured realm, clients and user roles.
+- [Postgres:14.2-bullseye](https://hub.docker.com/_/postgres) has created databases and users for all "University With Me" services.
 
 ## How to use
-You can manage docker cantainers using [IntelijIDEA](https://www.jetbrains.com/idea/), [Doker Desktop](https://www.docker.com/products/docker-desktop/) or command line. 
+You can manage docker containers using [IntelliJIDEA](https://www.jetbrains.com/idea/), [Docker Desktop](https://www.docker.com/products/docker-desktop/) or command line. 
 
 Starting docker containers in command line:
-1. Open command line in "uwithme-docker-files" project foulder.
+1. Open command line in "uwithme-docker-files" project folder.
 2. Run command: 
 ```bash
 docker-compose up -d
