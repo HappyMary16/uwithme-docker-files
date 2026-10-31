@@ -1,0 +1,29 @@
+# Usage: import oauth2 <ui upstream> <api upstream>
+# The UI is served at /, its API at /api/
+(oauth2) {
+	handle /oauth2/* {
+		reverse_proxy uwithme-oauth2-proxy:4180
+	}
+
+	handle /api/* {
+		forward_auth uwithme-oauth2-proxy:4180 {
+			uri /oauth2/auth
+			copy_headers X-Auth-Request-Access-Token
+		}
+		reverse_proxy {args[1]} {
+			header_up Authorization "Bearer {http.request.header.X-Auth-Request-Access-Token}"
+			header_up -X-Auth-Request-Access-Token
+		}
+	}
+
+	handle {
+		forward_auth uwithme-oauth2-proxy:4180 {
+			uri /oauth2/auth
+			@unauthorized status 401
+			handle_response @unauthorized {
+				redir * /oauth2/start?rd={uri}
+			}
+		}
+		reverse_proxy {args[0]}
+	}
+}

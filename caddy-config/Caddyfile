@@ -1,0 +1,13 @@
+import oauth2.caddy
+
+{$SCHEMA}{$KEYCLOAK_HOST} {
+	reverse_proxy uwithme-keycloak:8080
+}
+
+{$SCHEMA}{$U_WITH_ME_UI_HOST} {
+	import oauth2 uwithme-ui:8082 uwithme-service:8081
+}
+
+{$SCHEMA}{$TEST_SYSTEM_UI_HOST} {
+	import oauth2 uwithme-tests-ui:8091 uwithme-tests-service:8090
+}

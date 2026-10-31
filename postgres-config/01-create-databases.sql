@@ -1,4 +1,3 @@
 CREATE DATABASE keycloak;
 CREATE DATABASE uwithme;
 CREATE DATABASE testsystem;
-CREATE DATABASE unibot;

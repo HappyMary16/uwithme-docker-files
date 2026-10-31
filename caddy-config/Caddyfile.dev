@@ -1,0 +1,15 @@
+import oauth2.caddy
+
+http://localhost:8080 {
+	reverse_proxy uwithme-keycloak:8080
+}
+
+# University With Me UI
+http://localhost:4181 {
+	import oauth2 host.docker.internal:3000 host.docker.internal:8081
+}
+
+# Tests UI
+http://localhost:4180 {
+	import oauth2 host.docker.internal:5173 host.docker.internal:8090
+}
